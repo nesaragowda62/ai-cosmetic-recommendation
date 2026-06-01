@@ -1,4 +1,4 @@
-﻿# AI Cosmetic Recommendation System# 🌸 AI Cosmetic Product Recommendation System
+🌸 AI Cosmetic Product Recommendation System
 
 An AI-driven web application that recommends cosmetic products based on user skin type and preferences.
 
