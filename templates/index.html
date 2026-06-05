@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cosmetic Recommender</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #fff0f5; min-height: 100vh; padding: 40px 20px; }
+        h1 { text-align: center; color: #c2185b; font-size: 2rem; margin-bottom: 10px; }
+        p.subtitle { text-align: center; color: #888; margin-bottom: 30px; }
+        .form-card { background: white; max-width: 500px; margin: 0 auto 40px; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        label { font-weight: 600; color: #333; display: block; margin-bottom: 10px; }
+        select { width: 100%; padding: 12px; border: 2px solid #f48fb1; border-radius: 8px; font-size: 15px; color: #333; background: white; margin-bottom: 20px; }
+        button { width: 100%; padding: 14px; background: #c2185b; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; }
+        button:hover { background: #ad1457; }
+        .results { max-width: 700px; margin: 0 auto; }
+        .results h2 { color: #c2185b; margin-bottom: 20px; text-align: center; }
+        .product-card { background: white; padding: 20px 25px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 16px; border-left: 5px solid #f48fb1; }
+        .product-name { font-size: 17px; font-weight: 700; color: #333; }
+        .product-brand { color: #c2185b; font-size: 14px; margin: 4px 0 8px; }
+        .product-benefit { color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h1>🌸 AI Cosmetic Recommender</h1>
+    <p class="subtitle">Get personalized skincare product recommendations</p>
+
+    <div class="form-card">
+        <form method="POST">
+            <label for="skin_type">Select your skin type:</label>
+            <select name="skin_type" id="skin_type" required>
+                <option value="">-- Choose your skin type --</option>
+                <option value="oily" {% if skin_type == 'oily' %}selected{% endif %}>Oily</option>
+                <option value="dry" {% if skin_type == 'dry' %}selected{% endif %}>Dry</option>
+                <option value="combination" {% if skin_type == 'combination' %}selected{% endif %}>Combination</option>
+                <option value="sensitive" {% if skin_type == 'sensitive' %}selected{% endif %}>Sensitive</option>
+            </select>
+            <button type="submit">Get Recommendations ✨</button>
+        </form>
+    </div>
+
+    {% if recommendations %}
+    <div class="results">
+        <h2>Recommended Products for {{ skin_type|capitalize }} Skin</h2>
+        {% for product in recommendations %}
+        <div class="product-card">
+            <div class="product-name">{{ product.name }}</div>
+            <div class="product-brand">{{ product.brand }}</div>
+            <div class="product-benefit">{{ product.benefit }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>
