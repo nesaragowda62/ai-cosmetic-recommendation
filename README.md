@@ -1,5 +1,8 @@
 🌸 AI Cosmetic Product Recommendation System
 
+## 🌐 Live Demo
+👉 [Click here to see the app](https://ai-cosmetic-recommendation.onrender.com)
+
 An AI-driven web application that recommends cosmetic products based on user skin type and preferences.
 
 ## 🔧 Tech Stack
@@ -20,4 +23,4 @@ An AI-driven web application that recommends cosmetic products based on user ski
 3. System recommends the most suitable cosmetic products
 
 ## 📌 Status
-Rebuilding with improved ML model and deployed version coming soon.
+✅ Deployed and live at https://ai-cosmetic-recommendation.onrender.com
